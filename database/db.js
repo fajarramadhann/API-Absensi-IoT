@@ -2,10 +2,10 @@ import express from "express";
 import mysql from 'mysql';
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'absensi-guru-iot'
+  host: '103.253.213.45:2083',
+  user: 'netco405_jarssdev',
+  password: 'jarssdevelop',
+  database: 'netco405_absen-iot'
 })
 
 db.connect((err) => {
