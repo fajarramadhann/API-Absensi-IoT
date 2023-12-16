@@ -1,7 +1,6 @@
-import express from "express";
-import mysql2 from 'mysql2';
+import mysql from 'mysql';
 
-const db = mysql2.createConnection({
+const db = mysql.createConnection({
   host: 'semin.wonsacloud.com',
   user: 'netcodem_jarssdev',
   password: 'jarssdeveloper',
