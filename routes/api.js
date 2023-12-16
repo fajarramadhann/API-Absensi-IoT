@@ -18,6 +18,9 @@ router.get('/absen', async (req, res) => {
       const jam_masuk = new Date().toLocaleTimeString('en-US', { hour12: false });
       let status_kehadiran = "";
 
+      // const jadwal_msk = req.query.jadwal_masuk;
+      // const jadwal_masuk = await queryAsync(`SELECT * FROM jadwal WHERE jadwal_masuk = ${jadwal_msk}`)
+
       if (jam_masuk <= '07:00:00') {
         status_kehadiran = "Hadir";
       } else {
@@ -36,7 +39,8 @@ router.get('/absen', async (req, res) => {
 
         res.json({ 
           message: "Absen berhasil", 
-          namaGuru: namaGuru 
+          namaGuru: namaGuru,
+          jam: jam_masuk
         });
       }
     } else {
@@ -130,5 +134,13 @@ function queryAsink(sql) {
     });
   });
 }
+
+router.get('/jam', (req, res) => {
+  const jam = new Date().toLocaleTimeString('en-US', { hour12: false });
+
+  res.json({
+    jam: jam
+  })
+})
 
 export default router;

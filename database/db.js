@@ -1,11 +1,11 @@
 import express from "express";
-import mysql from 'mysql';
+import mysql2 from 'mysql2';
 
-const db = mysql.createConnection({
-  host: '103.253.213.45:2083',
-  user: 'netco405_jarssdev',
-  password: 'jarssdevelop',
-  database: 'netco405_absen-iot'
+const db = mysql2.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'absensi-guru-iot'
 })
 
 db.connect((err) => {
