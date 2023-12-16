@@ -10,7 +10,7 @@ const port = process.env.PORT;
 
 app.use(express.json());
 app.use(bodyParser.json());
-app.use('/api', router);
+app.use('/', router);
 
 app.listen(port, () => {
   console.log(`Server run on port: ${port}`);

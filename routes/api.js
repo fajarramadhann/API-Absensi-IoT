@@ -31,6 +31,10 @@ async function insertAbsenData(noKartu, namaGuru, kelasAjar, mataPelajaran, jamM
   await queryAsync(sql);
 }
 
+router.get('/', (req, res) => {
+  res.send('Express JS on Vercel')
+})
+
 router.get('/absen', async (req, res) => {
   const noKartu = req.query.no_kartu;
 
